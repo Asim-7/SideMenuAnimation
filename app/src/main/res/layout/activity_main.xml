@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/mainConstraintView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <Button
+        android:id="@+id/openLeftMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Left Menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/openRightMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Right Menu"
+        app:layout_constraintEnd_toEndOf="@+id/openLeftMenu"
+        app:layout_constraintStart_toStartOf="@+id/openLeftMenu"
+        app:layout_constraintTop_toBottomOf="@+id/openLeftMenu" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/leftShortMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/leftQuickMenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/leftQuickMenu">
+
+        <View
+        android:id="@+id/leftShortMenuItem1"
+        android:layout_width="50dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/teal_700"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/leftShortMenuItem2"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/teal_700"
+            app:layout_constraintStart_toStartOf="@+id/leftShortMenuItem1"
+            app:layout_constraintTop_toBottomOf="@+id/leftShortMenuItem1" />
+
+        <View
+            android:id="@+id/leftShortMenuItem3"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/teal_700"
+            app:layout_constraintStart_toStartOf="@+id/leftShortMenuItem2"
+            app:layout_constraintTop_toBottomOf="@+id/leftShortMenuItem2" />
+
+        <View
+            android:id="@+id/leftShortMenuItem4"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/leftShortMenuItem3"
+            app:layout_constraintTop_toBottomOf="@+id/leftShortMenuItem3"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/leftQuickMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <View
+            android:id="@+id/appsLeft"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/appsLeftExtesion"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="80dp"
+            android:background="@color/teal_700"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/appsLeft"
+            app:layout_constraintTop_toTopOf="@+id/appsLeft" />
+        <View
+            android:id="@+id/screenCastLeft"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintStart_toStartOf="@+id/appsLeft"
+            app:layout_constraintTop_toBottomOf="@+id/appsLeft" />
+        <View
+            android:id="@+id/screenCastLeftExtension"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="5dp"
+            android:background="@color/teal_700"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/screenCastLeft"
+            app:layout_constraintTop_toTopOf="@+id/screenCastLeft" />
+        <View
+            android:id="@+id/inputLeft"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintStart_toStartOf="@+id/screenCastLeft"
+            app:layout_constraintTop_toBottomOf="@+id/screenCastLeft" />
+        <View
+            android:id="@+id/inputLeftExtension"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:background="@color/teal_700"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/inputLeft"
+            app:layout_constraintTop_toTopOf="@+id/inputLeft" />
+        <View
+            android:id="@+id/volumeLeft"
+            android:layout_width="75dp"
+
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintStart_toStartOf="@+id/inputLeft"
+            app:layout_constraintTop_toBottomOf="@+id/inputLeft" />
+        <View
+            android:id="@+id/volumeLeftExtension"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:background="@color/teal_700"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/volumeLeft"
+            app:layout_constraintTop_toTopOf="@+id/volumeLeft" />
+        <View
+            android:id="@+id/liftLeft"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintStart_toStartOf="@+id/volumeLeft"
+            app:layout_constraintTop_toBottomOf="@+id/volumeLeft" />
+        <View
+            android:id="@+id/liftLeftExtension"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="5dp"
+            android:background="@color/teal_700"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@+id/liftLeft"
+            app:layout_constraintTop_toTopOf="@+id/liftLeft" />
+        <View
+            android:id="@+id/settingsLeft"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintStart_toStartOf="@+id/liftLeft"
+            app:layout_constraintTop_toBottomOf="@+id/liftLeft" />
+        <View
+            android:id="@+id/shutDownLeft"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/settingsLeft"
+            app:layout_constraintTop_toBottomOf="@+id/settingsLeft" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rightShortMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:visibility="gone"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rightQuickMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rightQuickMenu">
+
+        <View
+            android:id="@+id/rightShortMenuItem1"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/rightShortMenuItem2"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/teal_700"
+            app:layout_constraintStart_toStartOf="@+id/rightShortMenuItem1"
+            app:layout_constraintTop_toBottomOf="@+id/rightShortMenuItem1" />
+
+        <View
+            android:id="@+id/rightShortMenuItem3"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/teal_700"
+            app:layout_constraintStart_toStartOf="@+id/rightShortMenuItem2"
+            app:layout_constraintTop_toBottomOf="@+id/rightShortMenuItem2" />
+
+        <View
+            android:id="@+id/rightShortMenuItem4"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/rightShortMenuItem3"
+            app:layout_constraintTop_toBottomOf="@+id/rightShortMenuItem3"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rightQuickMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".MainActivity">
+        <View
+            android:id="@+id/appsRight"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/appsRightExtesion"
+            android:layout_width="150dp"
+            android:layout_height="300dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/teal_700"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/appsRight"
+            app:layout_constraintTop_toTopOf="@+id/appsRight" />
+        <View
+            android:id="@+id/screenCastRight"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintEnd_toEndOf="@+id/appsRight"
+
+            app:layout_constraintTop_toBottomOf="@+id/appsRight" />
+        <View
+            android:id="@+id/screenCastRightExtension"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/teal_700"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/screenCastRight"
+            app:layout_constraintTop_toTopOf="@+id/screenCastRight" />
+        <View
+            android:id="@+id/inputRight"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintEnd_toEndOf="@+id/screenCastRight"
+            app:layout_constraintTop_toBottomOf="@+id/screenCastRight" />
+        <View
+            android:id="@+id/inputRightExtension"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/teal_700"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/inputRight"
+            app:layout_constraintTop_toTopOf="@+id/inputRight" />
+        <View
+            android:id="@+id/volumeRight"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintEnd_toEndOf="@+id/inputRight"
+            app:layout_constraintTop_toBottomOf="@+id/inputRight" />
+        <View
+            android:id="@+id/volumeRightExtension"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/teal_700"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/volumeRight"
+
+            app:layout_constraintTop_toTopOf="@+id/volumeRight" />
+        <View
+            android:id="@+id/liftRight"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintEnd_toEndOf="@+id/volumeRight"
+            app:layout_constraintTop_toBottomOf="@+id/volumeRight" />
+        <View
+            android:id="@+id/liftRightExtension"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/teal_700"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/liftRight"
+            app:layout_constraintTop_toTopOf="@+id/liftRight" />
+        <View
+            android:id="@+id/settingsRight"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintEnd_toEndOf="@+id/liftRight"
+            app:layout_constraintTop_toBottomOf="@+id/liftRight" />
+        <View
+            android:id="@+id/shutDownRight"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/teal_700"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/settingsRight"
+            app:layout_constraintTop_toBottomOf="@+id/settingsRight" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
