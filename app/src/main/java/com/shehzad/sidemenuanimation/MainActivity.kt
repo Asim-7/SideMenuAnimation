@@ -23,64 +23,19 @@ class MainActivity : AppCompatActivity() {
         closedView = binding.rightQuickMenu
 
         binding.mainConstraintView.setOnClickListener {
-            /*if (openedViewLeft == binding.leftQuickMenu) {
-                //do nothing
-                //animation
-                //closedView = openedView
-                //do closing transition
-                openedViewLeft.animate().translationX(-600f)
-                //openedView.visibility = View.GONE
-            }else if (openedViewRight == binding.rightQuickMenu) {
-                //do nothing
-                //animation
-                //closedView = openedView
-                //do closing transition
-                openedViewRight.animate().translationX(+600f)
-                //openedView.visibility = View.GONE
-            } else if (isLeft) {
-                //animation
-                closedView = openedViewLeft
-                //do closing transition
-                openedViewLeft.animate().translationX(-600f)
-                //openedView.visibility = View.GONE
-            } else if (!isLeft) {
-                //animation
-                closedView = openedViewRight
-                //do closing transition
-                openedViewRight.animate().translationX(+600f)
-                //openedView.visibility = View.GONE
-            }*/
 
             if (openedViewLeft == binding.leftQuickMenu) {
-                //do nothing
-                //animation
-                //closedView = openedView
-                //do closing transition
                 openedViewLeft.animate().translationX(-600f)
-                //openedView.visibility = View.GONE
             } else if (isLeft) {
-                //animation
                 closedView = openedViewLeft
-                //do closing transition
                 openedViewLeft.animate().translationX(-600f)
-                //openedView.visibility = View.GONE
             }
 
             if (openedViewRight == binding.rightQuickMenu) {
-                //do nothing
-                //animation
-                //closedView = openedView
-                //do closing transition
                 openedViewRight.animate().translationX(+600f)
-                //openedViewRight.visibility = View.GONE
-                //openedView.visibility = View.GONE
             } else if (!isLeft) {
-                //animation
                 closedView = openedViewRight
-                //do closing transition
                 openedViewRight.animate().translationX(+600f)
-                //openedViewRight.visibility = View.GONE
-                //openedView.visibility = View.GONE
             }
 
         }
@@ -89,7 +44,6 @@ class MainActivity : AppCompatActivity() {
             if (binding.leftQuickMenu.visibility == View.VISIBLE) {
                 //do nothing
             } else {
-                //animation
                 //binding.leftQuickMenu.visibility = View.VISIBLE
                 binding.leftShortMenu.visibility = View.VISIBLE
                 binding.rightQuickMenu.visibility = View.GONE
@@ -148,7 +102,6 @@ class MainActivity : AppCompatActivity() {
             openedViewLeft = binding.leftQuickMenu
             openedViewLeft.animate().translationX(0f)
         }
-
 
         //RIGHT ONES #################################
 
