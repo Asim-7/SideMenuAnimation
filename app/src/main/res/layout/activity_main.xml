@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/mainConstraintView"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainConstraintView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -17,6 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/openRightMenu"
         android:layout_width="wrap_content"
@@ -33,19 +33,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginStart="5dp"
-        android:visibility="gone"
         android:background="#ADC9B4E6"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/leftQuickMenu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/leftQuickMenu">
 
         <View
-        android:id="@+id/leftShortMenuItem1"
-        android:layout_width="50dp"
-        android:layout_height="25dp"
-        android:background="@color/teal_700"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:id="@+id/leftShortMenuItem1"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:background="@color/teal_700"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/leftShortMenuItem2"
@@ -73,7 +73,7 @@
             android:background="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/leftShortMenuItem3"
-            app:layout_constraintTop_toBottomOf="@+id/leftShortMenuItem3"/>
+            app:layout_constraintTop_toBottomOf="@+id/leftShortMenuItem3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -82,12 +82,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:visibility="gone"
         android:layout_marginStart="60dp"
         android:background="#AEC9B4E6"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <View
             android:id="@+id/appsLeft"
             android:layout_width="75dp"
@@ -113,6 +114,7 @@
             android:background="@color/teal_700"
             app:layout_constraintStart_toStartOf="@+id/screenCastLeft"
             app:layout_constraintTop_toBottomOf="@+id/screenCastLeft" />
+
         <View
             android:id="@+id/inputLeftExtension"
             android:layout_width="250dp"
@@ -122,6 +124,7 @@
             android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/inputLeft"
             app:layout_constraintTop_toTopOf="@+id/inputLeft" />
+
         <View
             android:id="@+id/volumeLeft"
             android:layout_width="75dp"
@@ -131,6 +134,7 @@
             android:background="@color/teal_700"
             app:layout_constraintStart_toStartOf="@+id/inputLeft"
             app:layout_constraintTop_toBottomOf="@+id/inputLeft" />
+
         <View
             android:id="@+id/volumeLeftExtension"
             android:layout_width="250dp"
@@ -140,6 +144,7 @@
             android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/volumeLeft"
             app:layout_constraintTop_toTopOf="@+id/volumeLeft" />
+
         <View
             android:id="@+id/liftLeft"
             android:layout_width="75dp"
@@ -148,6 +153,7 @@
             android:background="@color/teal_700"
             app:layout_constraintStart_toStartOf="@+id/volumeLeft"
             app:layout_constraintTop_toBottomOf="@+id/volumeLeft" />
+
         <View
             android:id="@+id/liftLeftExtension"
             android:layout_width="150dp"
@@ -157,6 +163,7 @@
             android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/liftLeft"
             app:layout_constraintTop_toTopOf="@+id/liftLeft" />
+
         <View
             android:id="@+id/settingsLeft"
             android:layout_width="75dp"
@@ -165,6 +172,7 @@
             android:background="@color/teal_700"
             app:layout_constraintStart_toStartOf="@+id/liftLeft"
             app:layout_constraintTop_toBottomOf="@+id/liftLeft" />
+
         <View
             android:id="@+id/shutDownLeft"
             android:layout_width="75dp"
@@ -202,9 +210,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:visibility="visible"
         android:layout_marginEnd="5dp"
         android:background="#ADC9B4E6"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/rightQuickMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/rightQuickMenu">
@@ -243,7 +251,7 @@
             android:background="@color/teal_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/rightShortMenuItem3"
-            app:layout_constraintTop_toBottomOf="@+id/rightShortMenuItem3"/>
+            app:layout_constraintTop_toBottomOf="@+id/rightShortMenuItem3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -254,12 +262,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginEnd="60dp"
-        android:visibility="gone"
         android:background="#ADC9B4E6"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".MainActivity">
+
         <View
             android:id="@+id/appsRight"
             android:layout_width="75dp"
@@ -285,6 +294,7 @@
             android:background="@color/teal_700"
             app:layout_constraintEnd_toEndOf="@+id/screenCastRight"
             app:layout_constraintTop_toBottomOf="@+id/screenCastRight" />
+
         <View
             android:id="@+id/inputRightExtension"
             android:layout_width="250dp"
@@ -294,6 +304,7 @@
             android:visibility="gone"
             app:layout_constraintEnd_toStartOf="@+id/inputRight"
             app:layout_constraintTop_toTopOf="@+id/inputRight" />
+
         <View
             android:id="@+id/volumeRight"
             android:layout_width="75dp"
@@ -302,6 +313,7 @@
             android:background="@color/teal_700"
             app:layout_constraintEnd_toEndOf="@+id/inputRight"
             app:layout_constraintTop_toBottomOf="@+id/inputRight" />
+
         <View
             android:id="@+id/volumeRightExtension"
             android:layout_width="250dp"
@@ -312,6 +324,7 @@
             app:layout_constraintEnd_toStartOf="@+id/volumeRight"
 
             app:layout_constraintTop_toTopOf="@+id/volumeRight" />
+
         <View
             android:id="@+id/liftRight"
             android:layout_width="75dp"
@@ -320,6 +333,7 @@
             android:background="@color/teal_700"
             app:layout_constraintEnd_toEndOf="@+id/volumeRight"
             app:layout_constraintTop_toBottomOf="@+id/volumeRight" />
+
         <View
             android:id="@+id/liftRightExtension"
             android:layout_width="150dp"
@@ -329,6 +343,7 @@
             android:visibility="gone"
             app:layout_constraintEnd_toStartOf="@+id/liftRight"
             app:layout_constraintTop_toTopOf="@+id/liftRight" />
+
         <View
             android:id="@+id/settingsRight"
             android:layout_width="75dp"
@@ -337,6 +352,7 @@
             android:background="@color/teal_700"
             app:layout_constraintEnd_toEndOf="@+id/liftRight"
             app:layout_constraintTop_toBottomOf="@+id/liftRight" />
+
         <View
             android:id="@+id/shutDownRight"
             android:layout_width="75dp"
@@ -362,8 +378,8 @@
         android:id="@+id/screenCastRightExtensionOut"
         android:layout_width="150dp"
         android:layout_height="250dp"
-        android:layout_marginEnd="5dp"
         android:layout_marginTop="55dp"
+        android:layout_marginEnd="5dp"
         android:background="@color/teal_700"
         android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@+id/rightQuickMenu"
