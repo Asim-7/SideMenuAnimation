@@ -2,10 +2,12 @@ package com.shehzad.sidemenuanimation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.shehzad.sidemenuanimation.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var openedViewLeft: View
     private lateinit var openedViewRight: View
     private var isLeft = true
@@ -22,74 +24,36 @@ class MainActivity : AppCompatActivity() {
         openedViewRight = binding.rightQuickMenu
         closedView = binding.rightQuickMenu
 
-        binding.mainConstraintView.setOnClickListener {
-            /*if (openedViewLeft == binding.leftQuickMenu) {
-                //do nothing
-                //animation
-                //closedView = openedView
-                //do closing transition
-                openedViewLeft.animate().translationX(-600f)
-                //openedView.visibility = View.GONE
-            }else if (openedViewRight == binding.rightQuickMenu) {
-                //do nothing
-                //animation
-                //closedView = openedView
-                //do closing transition
-                openedViewRight.animate().translationX(+600f)
-                //openedView.visibility = View.GONE
-            } else if (isLeft) {
-                //animation
-                closedView = openedViewLeft
-                //do closing transition
-                openedViewLeft.animate().translationX(-600f)
-                //openedView.visibility = View.GONE
-            } else if (!isLeft) {
-                //animation
-                closedView = openedViewRight
-                //do closing transition
-                openedViewRight.animate().translationX(+600f)
-                //openedView.visibility = View.GONE
-            }*/
+        //Move right ones by default
+        moveRightViews()
 
+        //Main Screen
+        binding.mainConstraintView.setOnClickListener {
+            Log.d("AsimDebug", "Main Screen Clicked")
             if (openedViewLeft == binding.leftQuickMenu) {
-                //do nothing
-                //animation
-                //closedView = openedView
-                //do closing transition
                 openedViewLeft.animate().translationX(-600f)
-                //openedView.visibility = View.GONE
             } else if (isLeft) {
-                //animation
                 closedView = openedViewLeft
-                //do closing transition
                 openedViewLeft.animate().translationX(-600f)
-                //openedView.visibility = View.GONE
             }
 
             if (openedViewRight == binding.rightQuickMenu) {
-                //do nothing
-                //animation
-                //closedView = openedView
-                //do closing transition
                 openedViewRight.animate().translationX(+600f)
-                //openedViewRight.visibility = View.GONE
-                //openedView.visibility = View.GONE
             } else if (!isLeft) {
-                //animation
                 closedView = openedViewRight
-                //do closing transition
                 openedViewRight.animate().translationX(+600f)
-                //openedViewRight.visibility = View.GONE
-                //openedView.visibility = View.GONE
             }
-
         }
+
+        //Button
         binding.openLeftMenu.setOnClickListener {
             isLeft = true
+            openedViewRight.visibility = View.GONE
+            moveLeftViews()
+            //openedViewRight.animate().translationX(+600f)
             if (binding.leftQuickMenu.visibility == View.VISIBLE) {
                 //do nothing
             } else {
-                //animation
                 //binding.leftQuickMenu.visibility = View.VISIBLE
                 binding.leftShortMenu.visibility = View.VISIBLE
                 binding.rightQuickMenu.visibility = View.GONE
@@ -97,8 +61,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        //Button
         binding.openRightMenu.setOnClickListener {
             isLeft = false
+            openedViewLeft.visibility = View.GONE
+            moveRightViews()
+            //openedViewLeft.animate().translationX(-600f)
             if (binding.rightQuickMenu.visibility == View.VISIBLE) {
                 //do nothing
             } else {
@@ -110,86 +78,52 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding.appsLeft.setOnClickListener {
-            isLeft = true
-            if (openedViewLeft == binding.leftQuickMenu) {
-                //First Time in
-                binding.appsLeftExtesion.visibility = View.INVISIBLE
-                openedViewLeft = binding.appsLeftExtesion
-                openedViewLeft.animate().translationX(-600f)
-                binding.appsLeftExtesion.visibility = View.VISIBLE
-                openedViewLeft.animate().translationX(0f)
-            } else {
-                binding.appsLeftExtesion.visibility = View.VISIBLE
-                openedViewLeft = binding.appsLeftExtesion
-                openedViewLeft.animate().translationX(0f)
-            }
-        }
-
-        binding.screenCastLeft.setOnClickListener {
-            isLeft = true
-            if (openedViewLeft == binding.leftQuickMenu) {
-                //First Time in
-                binding.screenCastLeftExtension.visibility = View.INVISIBLE
-                openedViewLeft = binding.screenCastLeftExtension
-                openedViewLeft.animate().translationX(-600f)
-                binding.screenCastLeftExtension.visibility = View.VISIBLE
-                openedViewLeft.animate().translationX(0f)
-            } else {
-                binding.screenCastLeftExtension.visibility = View.VISIBLE
-                openedViewLeft = binding.screenCastLeftExtension
-                openedViewLeft.animate().translationX(0f)
-            }
-        }
-
-        binding.leftShortMenuItem1.setOnClickListener {
-            isLeft = true
-            binding.leftQuickMenu.visibility = View.VISIBLE
-            openedViewLeft = binding.leftQuickMenu
-            openedViewLeft.animate().translationX(0f)
-        }
-
+        //LEFT ONES #################################
+        binding.appsLeft.setOnClickListener { showLeftMenuItem(binding.appsLeftExtesionOut) }
+        binding.screenCastLeft.setOnClickListener { showLeftMenuItem(binding.screenCastLeftExtensionOut) }
+        binding.leftShortMenuItem1.setOnClickListener { showLeftMenuItem(binding.leftQuickMenu) }
 
         //RIGHT ONES #################################
-
-        binding.appsRight.setOnClickListener {
-            isLeft = false
-            if (openedViewRight == binding.rightQuickMenu) {
-                //First Time in
-                binding.appsRightExtesion.visibility = View.INVISIBLE
-                openedViewRight = binding.appsRightExtesion
-                openedViewRight.animate().translationX(+600f)
-                binding.appsRightExtesion.visibility = View.VISIBLE
-                openedViewRight.animate().translationX(0f)
-            } else {
-                binding.appsRightExtesion.visibility = View.VISIBLE
-                openedViewRight = binding.appsRightExtesion
-                openedViewRight.animate().translationX(0f)
-            }
-        }
-
-        binding.screenCastRight.setOnClickListener {
-            isLeft = false
-            if (openedViewRight == binding.rightQuickMenu) {
-                //First Time in
-                binding.screenCastRightExtension.visibility = View.INVISIBLE
-                openedViewRight = binding.screenCastRightExtension
-                openedViewRight.animate().translationX(+600f)
-                binding.screenCastRightExtension.visibility = View.VISIBLE
-                openedViewRight.animate().translationX(0f)
-            } else {
-                binding.screenCastRightExtension.visibility = View.VISIBLE
-                openedViewRight = binding.screenCastRightExtension
-                openedViewRight.animate().translationX(0f)
-            }
-        }
-
-        binding.rightShortMenuItem1.setOnClickListener {
-            isLeft = false
-            binding.rightQuickMenu.visibility = View.VISIBLE
-            openedViewRight = binding.rightQuickMenu
-            openedViewRight.animate().translationX(0f)
-        }
+        binding.appsRight.setOnClickListener { showRightMenuItem(binding.appsRightExtesionOut) }
+        binding.screenCastRight.setOnClickListener { showRightMenuItem(binding.screenCastRightExtensionOut) }
+        binding.rightShortMenuItem1.setOnClickListener { showRightMenuItem(binding.rightQuickMenu) }
 
     }
+
+    private fun showLeftMenuItem(view: View) {
+        isLeft = true
+        openedViewLeft = view
+        openedViewLeft.visibility = View.VISIBLE
+        openedViewLeft.animate().translationX(0f)
+    }
+
+    private fun showRightMenuItem(view: View) {
+        isLeft = false
+        openedViewRight = view
+        openedViewRight.visibility = View.VISIBLE
+        openedViewRight.animate().translationX(0f)
+    }
+
+    private fun moveLeftViews() {
+        binding.appsLeftExtesionOut.visibility = View.INVISIBLE
+        binding.appsLeftExtesionOut.animate().translationX(-600f)
+
+        binding.screenCastLeftExtensionOut.visibility = View.INVISIBLE
+        binding.screenCastLeftExtensionOut.animate().translationX(-600f)
+
+        binding.leftQuickMenu.visibility = View.INVISIBLE
+        binding.leftQuickMenu.animate().translationX(-600f)
+    }
+
+    private fun moveRightViews() {
+        binding.appsRightExtesionOut.visibility = View.INVISIBLE
+        binding.appsRightExtesionOut.animate().translationX(+600f)
+
+        binding.screenCastRightExtensionOut.visibility = View.INVISIBLE
+        binding.screenCastRightExtensionOut.animate().translationX(+600f)
+
+        binding.rightQuickMenu.visibility = View.INVISIBLE
+        binding.rightQuickMenu.animate().translationX(+600f)
+    }
+
 }
